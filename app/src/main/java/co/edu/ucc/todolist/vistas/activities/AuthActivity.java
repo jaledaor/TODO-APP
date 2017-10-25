@@ -7,11 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 
 import co.edu.ucc.todolist.R;
 import co.edu.ucc.todolist.vistas.fragmentos.LoginFragment;
+import co.edu.ucc.todolist.vistas.fragmentos.RecordatorioFragment;
 import co.edu.ucc.todolist.vistas.fragmentos.RegistroFragment;
 
 public class AuthActivity extends AppCompatActivity
         implements LoginFragment.OnLoginFragmentInteraction,
-        RegistroFragment.OnRegistroInteractionListener {
+        RegistroFragment.OnRegistroInteractionListener, RecordatorioFragment.OnRecordatorioInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,25 @@ public class AuthActivity extends AppCompatActivity
     }
 
     @Override
+    public void irARecordar() {
+        FragmentTransaction transaction =
+                getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.frameAuthActivity, RecordatorioFragment.newInstance());
+        transaction.commit();
+    }
+
+    @Override
     public void irALogin() {
+        FragmentTransaction transaction =
+                getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.frameAuthActivity, LoginFragment.newInstance());
+        transaction.commit();
+    }
+
+    @Override
+    public void finalizarRecordatorio() {
         FragmentTransaction transaction =
                 getSupportFragmentManager().beginTransaction();
 

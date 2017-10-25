@@ -11,7 +11,7 @@ import co.edu.ucc.todolist.modelo.Tarea;
  * Created by jggomez on 03-Oct-17.
  */
 
-@Database(entities = {Tarea.class}, version = 1)
+@Database(entities = {Tarea.class}, version = 2)
 public abstract class AppDB extends RoomDatabase {
 
     private static AppDB instancia = null;

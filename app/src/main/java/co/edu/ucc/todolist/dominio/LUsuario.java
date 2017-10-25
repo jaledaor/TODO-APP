@@ -3,6 +3,8 @@ package co.edu.ucc.todolist.dominio;
 import android.support.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -82,7 +84,20 @@ public class LUsuario implements ILUsuario {
 
     @Override
     public void recordarUsuario(String email,
-                             final CallBackInteractor<String> callBackInteractor) {
+                                final CallBackInteractor<String> callBackInteractor) {
+        firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    callBackInteractor.success("Exitoso");
+                } else {
+                    callBackInteractor.error(task.getException().getMessage());
+                }
+            }
+        });
+
+    }
+
         /*firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener(OnCompleteListener})
         firebaseAuth.createUserWithEmailAndPassword(usuario.getEmail(), password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -100,5 +115,5 @@ public class LUsuario implements ILUsuario {
                     }
                 });*/
 
-    }
 }
+

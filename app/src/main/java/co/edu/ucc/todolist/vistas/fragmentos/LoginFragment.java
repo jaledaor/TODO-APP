@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +38,9 @@ public class LoginFragment extends Fragment implements ILoginFragmentView {
 
     @BindView(R.id.btnCrearCuenta)
     Button btnCrearCuenta;
+
+    @BindView(R.id.txtRecordarContrasena)
+    TextView txtRecordarContrasena;
 
     private ILoginPresenter loginPresenter;
 
@@ -129,6 +133,14 @@ public class LoginFragment extends Fragment implements ILoginFragmentView {
         }
     }
 
+    @OnClick(R.id.txtRecordarContrasena)
+    @Override
+    public void irARecordar() {
+        if (mListener != null) {
+            mListener.irARecordar();
+        }
+    }
+
     @Override
     public void finalizarLogin() {
         if (mListener != null) {
@@ -152,6 +164,8 @@ public class LoginFragment extends Fragment implements ILoginFragmentView {
         void finalizarLogin();
 
         void irARegistro();
+
+        void irARecordar();
 
     }
 }

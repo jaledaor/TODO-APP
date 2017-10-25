@@ -4,12 +4,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +39,10 @@ public class RegistroFragment extends Fragment implements IRegistroFragmentView 
 
     @BindView(R.id.progress)
     ProgressBar progress;
+
+    @BindView(R.id.txtLogin)
+    TextView txtLogin;
+
 
     private IRegistroPresenter registroPresenter;
 
@@ -115,6 +121,18 @@ public class RegistroFragment extends Fragment implements IRegistroFragmentView 
         String password = txtPasswordLogin.getText().toString();
 
         registroPresenter.registrar(nombres, email, password);
+    }
+
+    @OnClick(R.id.txtLogin)
+    public void ClicVolver(){
+        // Crea el nuevo fragmento y la transacción.
+        Fragment nuevoFragmento = new LoginFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameAuthActivity, nuevoFragmento);
+        transaction.addToBackStack(null);
+
+        // Commit a la transacción
+        transaction.commit();
     }
 
     @Override

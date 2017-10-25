@@ -4,12 +4,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +30,9 @@ public class RecordatorioFragment extends Fragment implements IRecordatorioFragm
 
     @BindView(R.id.progressRec)
     ProgressBar progressRec;
+
+    @BindView(R.id.txtVolverLogin)
+    TextView txtVolverLogin;
 
     private IRecordatorioPresenter recordatorioPresenter;
 
@@ -103,6 +108,18 @@ public class RecordatorioFragment extends Fragment implements IRecordatorioFragm
     public void recordar() {
         String email = txt_rec_email.getText().toString();
         recordatorioPresenter.recordar(email);
+    }
+
+    @OnClick(R.id.txtVolverLogin)
+    public void ClicVolver(){
+        // Crea el nuevo fragmento y la transacción.
+        Fragment nuevoFragmento = new LoginFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameAuthActivity, nuevoFragmento);
+        transaction.addToBackStack(null);
+
+        // Commit a la transacción
+        transaction.commit();
     }
 
     @Override

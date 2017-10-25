@@ -58,7 +58,7 @@
                 android:text="@string/recordar_cuenta" />
 
             <TextView
-                android:id="@+id/txtLogin"
+                android:id="@+id/txtVolverLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
