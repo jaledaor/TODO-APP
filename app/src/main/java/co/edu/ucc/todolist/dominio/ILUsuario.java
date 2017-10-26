@@ -15,5 +15,5 @@ public interface ILUsuario {
                      CallBackInteractor<String> callBackInteractor);
 
     void recordarUsuario(String email,
-                     CallBackInteractor<String> callBackInteractor);
+                         CallBackInteractor<String> callBackInteractor);
 }

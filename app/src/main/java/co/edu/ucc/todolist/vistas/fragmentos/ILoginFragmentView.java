@@ -7,13 +7,21 @@ package co.edu.ucc.todolist.vistas.fragmentos;
 public interface ILoginFragmentView {
 
     void habilitarVistas();
+
     void deshabilitarVistas();
+
     void mostrarProgress();
+
     void ocultarProgress();
+
     void login();
+
     void irARegistro();
+
     void irARecordar();
+
     void finalizarLogin();
+
     void mostrarError(String mensaje);
 
 }

@@ -8,11 +8,18 @@ public interface IRecordatorioFragmentView {
 
 
     void habilitarControles();
+
     void deshabilitarControles();
+
     void mostrarProgress();
+
     void ocultarProgress();
+
     void recordar();
+
     void mostrarError(String error);
+
     void irALogin();
+
     void finalizarRecordatorio();
 }

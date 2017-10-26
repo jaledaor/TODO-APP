@@ -43,11 +43,10 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ItemTo
     public void onBindViewHolder(ItemTodoList holder, int position) {
         Tarea tarea = dataset.get(position);
 
-        if(tarea.isRealizada()){
+        if (tarea.isRealizada()) {
             holder.tvTarea.setPaintFlags(holder.tvTarea.getPaintFlags()
                     | Paint.STRIKE_THRU_TEXT_FLAG);
-        }
-        else{
+        } else {
             holder.tvTarea.setPaintFlags(holder.tvTarea.getPaintFlags()
                     & ~Paint.STRIKE_THRU_TEXT_FLAG);
         }
@@ -56,11 +55,11 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ItemTo
         holder.chkTarea.setChecked(tarea.isRealizada());
     }
 
-    public void setDataset(List<Tarea> dataset){
+    public void setDataset(List<Tarea> dataset) {
         this.dataset = dataset;
     }
 
-    public void setItemDataset(Tarea tarea, int index){
+    public void setItemDataset(Tarea tarea, int index) {
         this.dataset.set(index, tarea);
     }
 

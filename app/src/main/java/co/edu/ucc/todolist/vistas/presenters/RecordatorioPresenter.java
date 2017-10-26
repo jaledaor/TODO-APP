@@ -9,7 +9,7 @@ import co.edu.ucc.todolist.vistas.fragmentos.IRecordatorioFragmentView;
  * Created by Karen on 24/10/2017.
  */
 
-public class RecordatorioPresenter implements IRecordatorioPresenter{
+public class RecordatorioPresenter implements IRecordatorioPresenter {
 
     private IRecordatorioFragmentView view;
     private ILUsuario lUsuario;

@@ -101,7 +101,7 @@ public class ListActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.salir){
+        if (id == R.id.salir) {
             Intent intent = new Intent(this, AuthActivity.class);
             startActivity(intent);
             finish();

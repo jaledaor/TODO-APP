@@ -124,7 +124,7 @@ public class RegistroFragment extends Fragment implements IRegistroFragmentView 
     }
 
     @OnClick(R.id.txtLogin)
-    public void ClicVolver(){
+    public void ClicVolver() {
         // Crea el nuevo fragmento y la transacción.
         Fragment nuevoFragmento = new LoginFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();

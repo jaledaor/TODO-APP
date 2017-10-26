@@ -20,7 +20,7 @@ import co.edu.ucc.todolist.R;
 import co.edu.ucc.todolist.vistas.presenters.IRecordatorioPresenter;
 import co.edu.ucc.todolist.vistas.presenters.RecordatorioPresenter;
 
-public class RecordatorioFragment extends Fragment implements IRecordatorioFragmentView{
+public class RecordatorioFragment extends Fragment implements IRecordatorioFragmentView {
 
     @BindView(R.id.txt_rec_email)
     EditText txt_rec_email;
@@ -54,14 +54,13 @@ public class RecordatorioFragment extends Fragment implements IRecordatorioFragm
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_recordatorio, container, false);
+        View view = inflater.inflate(R.layout.fragment_recordatorio, container, false);
         ButterKnife.bind(this, view);
 
         recordatorioPresenter = new RecordatorioPresenter(this);
 
         return view;
     }
-
 
 
     @Override
@@ -111,7 +110,7 @@ public class RecordatorioFragment extends Fragment implements IRecordatorioFragm
     }
 
     @OnClick(R.id.txtVolverLogin)
-    public void ClicVolver(){
+    public void ClicVolver() {
         // Crea el nuevo fragmento y la transacción.
         Fragment nuevoFragmento = new LoginFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
