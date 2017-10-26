@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context="co.edu.ucc.todolist.vistas.fragmentos.LoginFragment">
 
+
     <ProgressBar
         android:id="@+id/progress"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
