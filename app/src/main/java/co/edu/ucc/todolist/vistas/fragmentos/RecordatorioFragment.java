@@ -117,8 +117,6 @@ public class RecordatorioFragment extends Fragment implements IRecordatorioFragm
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.frameAuthActivity, nuevoFragmento);
         transaction.addToBackStack(null);
-
-        // Commit a la transacción
         transaction.commit();
     }
 
